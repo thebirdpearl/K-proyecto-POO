@@ -1,3 +1,11 @@
+/******************************************************************
+biblioteca.java
+Autores: Jose Gonzalez, Carol Arevalo
+Última modificación: 19/08/20
+
+Biblioteca de palabras de español a cacchiquel para proyecto POO
+******************************************************************/
+
 import java.util.ArrayList;
 import java.util.List;
 
