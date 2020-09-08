@@ -6,7 +6,7 @@ public class DriverApp{
 		int opcion = 0;
 		Scanner scan = new Scanner(System.in);
 		boolean bandc=true;//detiene el while principal si el usuario metió un numero invalido (band==true--> todo en orden)(band==false--> hubo un error)
-		
+		practicar practica = new practicar();
 		while (opcion != 4 && bandc==true){//loop que genera el menú para el usuario
 		    //se despliega el menú
 			System.out.println("\n\nBienvenido a K' la app para aprender idioma maya");
@@ -15,17 +15,17 @@ public class DriverApp{
 			System.out.println("2. Lecciones");
 			System.out.println("3. Nosotros");
 			System.out.println("4. Cerrar la App\n\n");
-			
+
 			try{
 				opcion = scan.nextInt(); //se copia la respuesta del ususario en una variable
-				
+
 			}catch(Exception e){
 				//System.out.println("Por favor ingrese un numero validop");
 				bandc=false;
 				opcion=4;
 			}
-			
-			
+
+
 			if (opcion == 1 ){//aqui va la página de traducción
 			    boolean bandt=true; //ayuda a validar al igual que bandc
 				int opciont=0;//variable donde se guarda la opcion que se escoge en traductor
@@ -37,45 +37,50 @@ public class DriverApp{
 					System.out.println("3. Cerrar Traductor\n\n");
 					try{
 						opciont = scan.nextInt(); //se copia la respuesta del ususario en una variable
-						
+
 					}catch(Exception e){
 						//System.out.println("Por favor ingrese un numero validop");
 						bandt=false;
 						opciont=3;
 					}
 					if(opciont==1){//K'iche - Espanol
-						
+
 					}else if(opciont==2){//Espanol - K'iche
-						
+
 					}else if(opciont==3){//salir del traductor
 						System.out.println("Gracias por utilizar el traductor");
 					}else{
 						System.out.println("Por favor ingrese un numero valido");
 					}
 				}
-			} else if (opcion == 2){//agui va la pagina de lecciones			
+			} else if (opcion == 2){//agui va la pagina de lecciones
 				boolean bandl=true; //ayuda a validar al igual que bandc
 				int opcionl=0;//variable donde se guarda la opcion que se escoge en lecciones
-				while (opcionl != 3 && bandl==true){
+				while (opcionl != 4 && bandl==true){
 					//se despliega el menú de lecciones (solo puse 2 por el momento)
 					System.out.println("Has ingresado a lecciones");
 					System.out.println("Escoge una opcion marcando el numero que le antecede");
-					System.out.println("1. Escuela");
+					System.out.println("1. Saludos");
 					System.out.println("2. Familia");
-					System.out.println("3. Cerrar Lecciones\n\n");
+					System.out.println("3. Vida cotidiana");
+					System.out.println("4. Cerrar Lecciones\n\n");
 					try{
 						opcionl = scan.nextInt(); //se copia la respuesta del ususario en una variable
-						
+
 					}catch(Exception e){
 						//System.out.println("Por favor ingrese un numero validop");
 						bandl=false;
-						opcionl=3;
+						opcionl=4;
 					}
-					if(opcionl==1){//Leccion de escuela
-						
+					if(opcionl==1){//Leccion de saludis
+						System.out.println(practica.seleccion(1));					
 					}else if(opcionl==2){//leccion de familia
-						
-					}else if(opcionl==3){//salir de lecciones
+						System.out.println("Opción 2");
+						System.out.println(practica.seleccion(2));
+					}else if(opcionl==3){//leccion de vida cotidiana
+						System.out.println("Opción 3");
+						System.out.println(practica.seleccion(3));
+					}else if(opcionl==4){//salir de lecciones
 						System.out.println("Has salido de las lecciones");
 					}else{
 						System.out.println("Por favor ingrese un numero valido");
